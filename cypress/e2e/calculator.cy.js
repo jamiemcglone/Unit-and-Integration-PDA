@@ -16,6 +16,7 @@ describe("Calculator", () => {
     cy.get('#number5').click();
     cy.get('.display').should('contain', '5');
   })
+
 // Do the arithmetical operations update the display with the result of the operation?
 it('should update the display with the result', () => {
   cy.get('#number2').click();
@@ -87,6 +88,6 @@ it('should handle division by zero', () => {
   cy.get('#operator-divide').click();
   cy.get('#number0').click();
   cy.get('#operator-equals').click();
-  cy.get('.display').should('contain', '0');
+  cy.get('.display').should('contain', 'Error');
 })
 })
